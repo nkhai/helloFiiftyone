@@ -6,8 +6,8 @@ class Greet(foo.Operator):
     @property
     def config(self):
         return foo.OperatorConfig(
-            name="khaitestx_greet_py",
-            label="khaitestx: Greet from Py",
+            name="atlas_voxel_greet_py",
+            label="atlas_voxel: Greet from Py",
         )
 
     def execute(self, ctx):
@@ -31,7 +31,7 @@ class Greet(foo.Operator):
     #         # Display a button as the placement
     #         types.Button(
     #             # label for placement button visible on hover
-    #             label="khaitestx: Greet",
+    #             label="atlas_voxel: Greet",
     #             # icon for placement button. If not provided, button with label
     #             # will be displayed
     #             icon="/assets/greet.svg",

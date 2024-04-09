@@ -10,8 +10,8 @@ import { useRecoilValue } from "recoil";
 class Greet extends Operator {
   get config() {
     return new OperatorConfig({
-      name: "khaitestx_greet_js",
-      label: "khaitestx: Greet from JS",
+      name: "atlas_voxel_greet_js",
+      label: "atlas_voxel: Greet from JS",
     });
   }
   async execute({ hooks, params }) {
@@ -36,7 +36,7 @@ class Greet extends Operator {
   //   return new types.Placement(
   //     types.Places.SAMPLES_GRID_SECONDARY_ACTIONS,
   //     new types.Button({
-  //       label: "khaitestx: Greet from JS",
+  //       label: "atlas_voxel: Greet from JS",
   //       icon: "/assets/icon.svg",
   //     })
   //   );
@@ -47,4 +47,4 @@ class Greet extends Operator {
   }
 }
 
-registerOperator(Greet, "khaitestx");
+registerOperator(Greet, "atlas_voxel");

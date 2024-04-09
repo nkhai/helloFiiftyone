@@ -1,5 +1,5 @@
 {
-    "name": "khaitestx",
+    "name": "atlas_voxel",
     "version": "1.0.0",
     "main": "src/index.ts",
     "fiftyone": {

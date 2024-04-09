@@ -1,8 +1,8 @@
 fiftyone:
   version: "*"
-name: "khaitestx"
+name: "atlas_voxel"
 version: "1.0.0"
 description: "Fiftyone starter plugin"
 operators:
-  - "khaitestx_greet_py"
-  - "khaitestx_greet_js"
+  - "atlas_voxel_greet_py"
+  - "atlas_voxel_greet_js"
