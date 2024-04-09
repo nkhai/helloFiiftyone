@@ -1,5 +1,5 @@
 {
-    "name": "@voxel51/hello-world",
+    "name": "@voxel51/khaitest",
     "version": "1.0.0",
     "main": "src/HelloWorldPlugin.tsx",
     "license": "MIT",

@@ -12,7 +12,7 @@ import {
 } from "@fiftyone/operators";
 
 export function HelloWorld() {
-  const executor = useOperatorExecutor("@voxel51/hello-world/count_samples");
+  const executor = useOperatorExecutor("@voxel51/khaitest/count_samples");
   const onClickAlert = useCallback(() =>
     executeOperator("@voxel51/hello-world/show_alert")
   );
