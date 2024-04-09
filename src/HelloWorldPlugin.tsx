@@ -3,7 +3,7 @@ import { HelloWorld } from "./HelloWorld";
 
 registerComponent({
   name: "khaitest",
-  label: "Hello world",
+  label: "khai Hello world",
   component: HelloWorld,
   type: PluginComponentType.Panel,
   activator: myActivator,
