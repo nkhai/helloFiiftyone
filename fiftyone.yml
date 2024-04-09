@@ -1,10 +1,8 @@
-name: "@voxel51/khaitest"
-description: An example of JS and Python components in a single plugin
-version: 1.0.0
 fiftyone:
   version: "*"
-url: https://github.com/voxel51/fiftyone-plugins/tree/main/plugins/hello-world
-license: Apache 2.0
+name: "khaitestx"
+version: "1.0.0"
+description: "Fiftyone starter plugin"
 operators:
-  - count_samples
-  - show_alert
+  - "khaitestx_greet_py"
+  - "khaitestx_greet_js"
