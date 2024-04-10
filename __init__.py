@@ -44,7 +44,8 @@ class GreetPanel(foo.Operator):
 
     def execute(self, ctx):
         ctx.trigger(
-            "open_panel"
+            "open_panel",
+            params=dict(name="khai", isActive=True, layout="horizontal"),
         )
 
     # Uncomment class method below to add a placement for this operator
