@@ -25,30 +25,30 @@ class Greet(foo.Operator):
         outputs.str("greeting")
         return types.Property(outputs)
 
-class GreetPanel(foo.Operator):
-    @property
-    def config(self):
-        return foo.OperatorConfig(
-            name="atlas_voxel_greet_panel",
-            label="atlas_voxel: Greet from Py panel",
-            unlisted=True,
-        )
+# class GreetPanel(foo.Operator):
+#     @property
+#     def config(self):
+#         return foo.OperatorConfig(
+#             name="atlas_voxel_greet_panel",
+#             label="atlas_voxel: Greet from Py panel",
+#             unlisted=True,
+#         )
 
-    def resolve_placement(self, ctx):
-        return types.Placement(
-            types.Places.SAMPLES_GRID_ACTIONS,
-            types.Button(
-                label="Open Geeting test",
-                icon="/assets/icon.svg",
-                prompt=False,
-            ),
-        )
+#     def resolve_placement(self, ctx):
+#         return types.Placement(
+#             types.Places.SAMPLES_GRID_ACTIONS,
+#             types.Button(
+#                 label="Open Geeting test",
+#                 icon="/assets/icon.svg",
+#                 prompt=False,
+#             ),
+#         )
 
-    def execute(self, ctx):
-        ctx.trigger(
-            "open_panel",
-            params=dict(name="khai", isActive=True, layout="horizontal"),
-        )
+#     def execute(self, ctx):
+#         ctx.trigger(
+#             "open_panel",
+#             params=dict(name="khai", isActive=True, layout="horizontal"),
+#         )
 
     # Uncomment class method below to add a placement for this operator
     # def resolve_placement(self, ctx):
@@ -71,4 +71,4 @@ class GreetPanel(foo.Operator):
 
 def register(p):
     p.register(Greet)
-    p.register(GreetPanel)
+    # p.register(GreetPanel)
