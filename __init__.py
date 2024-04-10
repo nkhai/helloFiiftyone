@@ -27,8 +27,8 @@ class GreetPanel(foo.Operator):
     @property
     def config(self):
         return foo.OperatorConfig(
-            name="atlas_voxel_greet_py",
-            label="atlas_voxel: Greet from Py",
+            name="atlas_voxel_greet_panel",
+            label="atlas_voxel: Greet from Py panel",
             unlisted=True,
         )
 
@@ -44,7 +44,8 @@ class GreetPanel(foo.Operator):
 
     def execute(self, ctx):
         ctx.trigger(
-            "open_panel"
+            "open_panel",
+            params=dict(name="khai", isActive=True, layout="horizontal"),
         )
 
     # Uncomment class method below to add a placement for this operator
