@@ -69,3 +69,4 @@ class GreetPanel(foo.Operator):
 
 def register(p):
     p.register(Greet)
+    p.register(GreetPanel)
