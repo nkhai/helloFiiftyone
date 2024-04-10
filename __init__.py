@@ -36,7 +36,7 @@ class GreetPanel(foo.Operator):
         return types.Placement(
             types.Places.SAMPLES_GRID_ACTIONS,
             types.Button(
-                label="Open VoxelGPT",
+                label="Open Geeting test",
                 icon="/assets/icon.svg",
                 prompt=False,
             ),
@@ -44,8 +44,7 @@ class GreetPanel(foo.Operator):
 
     def execute(self, ctx):
         ctx.trigger(
-            "open_panel",
-            params=dict(name="khai", isActive=True, layout="horizontal"),
+            "open_panel"
         )
 
     # Uncomment class method below to add a placement for this operator
