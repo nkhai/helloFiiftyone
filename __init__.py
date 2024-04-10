@@ -10,16 +10,6 @@ class Greet(foo.Operator):
             label="atlas_voxel: Greet from Py",
         )
 
-    def resolve_placement(self, ctx):
-        return types.Placement(
-            types.Places.SAMPLES_GRID_ACTIONS,
-            types.Button(
-                label="Open voxel_atlas",
-                icon="/assets/icon.svg",
-                prompt=False,
-            ),
-        )
-
     def execute(self, ctx):
         return {"greeting": "Hi " + ctx.params["name"]}
 
@@ -32,6 +22,30 @@ class Greet(foo.Operator):
         outputs = types.Object()
         outputs.str("greeting")
         return types.Property(outputs)
+
+class GreetPanel(foo.Operator):
+    @property
+    def config(self):
+        return foo.OperatorConfig(
+            name="atlas_voxel_greet_py",
+            label="atlas_voxel: Greet from Py",
+            unlisted=True,
+        )
+
+    def resolve_placement(self, ctx):
+        return types.Placement(
+            types.Places.SAMPLES_GRID_ACTIONS,
+            types.Button(
+                label="Open VoxelGPT",
+                icon="/assets/icon.svg",
+                prompt=False,
+            ),
+        )
+
+    def execute(self, ctx):
+        ctx.trigger(
+            "open_panel"
+        )
 
     # Uncomment class method below to add a placement for this operator
     # def resolve_placement(self, ctx):
