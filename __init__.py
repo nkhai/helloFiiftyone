@@ -10,6 +10,16 @@ class Greet(foo.Operator):
             label="atlas_voxel: Greet from Py",
         )
 
+    def resolve_placement(self, ctx):
+        return types.Placement(
+            types.Places.SAMPLES_GRID_ACTIONS,
+            types.Button(
+                label="Open voxel_atlas",
+                icon="/assets/icon.svg",
+                prompt=False,
+            ),
+        )
+
     def execute(self, ctx):
         return {"greeting": "Hi " + ctx.params["name"]}
 
