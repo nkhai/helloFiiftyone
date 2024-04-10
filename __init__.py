@@ -8,6 +8,8 @@ class Greet(foo.Operator):
         return foo.OperatorConfig(
             name="atlas_voxel_greet_py",
             label="atlas_voxel: Greet from Py",
+            execute_as_generator=True,
+            unlisted=True,
         )
 
     def execute(self, ctx):
