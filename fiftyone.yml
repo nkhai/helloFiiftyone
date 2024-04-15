@@ -1,8 +1,10 @@
+name: "@voxel51/hello-world"
+description: An example of JS and Python components in a single plugin
+version: 1.0.0
 fiftyone:
   version: "*"
-name: "atlas_voxel"
-version: "1.0.0"
-description: "Fiftyone starter plugin"
+url: https://github.com/voxel51/fiftyone-plugins/tree/main/plugins/hello-world
+license: Apache 2.0
 operators:
-  - "atlas_voxel_greet_py"
-  - "atlas_voxel_greet_js"
+  - count_samples
+  - show_alert

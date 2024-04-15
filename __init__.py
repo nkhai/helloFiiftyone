@@ -2,73 +2,56 @@ import fiftyone.operators as foo
 import fiftyone.operators.types as types
 
 
-class Greet(foo.Operator):
+class CountSamples(foo.Operator):
     @property
     def config(self):
         return foo.OperatorConfig(
-            name="atlas_voxel_greet_py",
-            label="atlas_voxel: Greet from Py",
-            execute_as_generator=True,
-            unlisted=True,
+            name="count_samples",
+            label="Count samples",
+            dynamic=True,
         )
-
-    def execute(self, ctx):
-        return {"greeting": "Hi " + ctx.params["name"]}
 
     def resolve_input(self, ctx):
         inputs = types.Object()
-        inputs.str("name")
-        return types.Property(inputs)
+
+        if ctx.view != ctx.dataset.view():
+            choices = types.RadioGroup()
+            choices.add_choice(
+                "DATASET",
+                label="Dataset",
+                description="Count the number of samples in the dataset",
+            )
+
+            choices.add_choice(
+                "VIEW",
+                label="Current view",
+                description="Count the number of samples in the current view",
+            )
+
+            inputs.enum(
+                "target",
+                choices.values(),
+                required=True,
+                default="VIEW",
+                view=choices,
+            )
+
+        return types.Property(inputs, view=types.View(label="Count samples"))
+
+    def execute(self, ctx):
+        target = ctx.params.get("target", "DATASET")
+        sample_collection = ctx.view if target == "VIEW" else ctx.dataset
+        return {"count": sample_collection.count()}
 
     def resolve_output(self, ctx):
+        target = ctx.params.get("target", "DATASET")
         outputs = types.Object()
-        outputs.str("greeting")
+        outputs.int(
+            "count",
+            label=f"Number of samples in the current {target.lower()}",
+        )
         return types.Property(outputs)
-
-# class GreetPanel(foo.Operator):
-#     @property
-#     def config(self):
-#         return foo.OperatorConfig(
-#             name="atlas_voxel_greet_panel",
-#             label="atlas_voxel: Greet from Py panel",
-#             unlisted=True,
-#         )
-
-#     def resolve_placement(self, ctx):
-#         return types.Placement(
-#             types.Places.SAMPLES_GRID_ACTIONS,
-#             types.Button(
-#                 label="Open Geeting test",
-#                 icon="/assets/icon.svg",
-#                 prompt=False,
-#             ),
-#         )
-
-#     def execute(self, ctx):
-#         ctx.trigger(
-#             "open_panel",
-#             params=dict(name="khai", isActive=True, layout="horizontal"),
-#         )
-
-    # Uncomment class method below to add a placement for this operator
-    # def resolve_placement(self, ctx):
-    #     return types.Placement(
-    #         # Display placement in the actions row of samples grid
-    #         types.Places.SAMPLES_GRID_SECONDARY_ACTIONS,
-    #         # Display a button as the placement
-    #         types.Button(
-    #             # label for placement button visible on hover
-    #             label="atlas_voxel: Greet",
-    #             # icon for placement button. If not provided, button with label
-    #             # will be displayed
-    #             icon="/assets/greet.svg",
-    #             # skip operator prompt when we do not require an input from
-    #             # the user by setting prompt to False
-    #             prompt=True
-    #         )
-    #     )
 
 
 def register(p):
-    p.register(Greet)
-    # p.register(GreetPanel)
+    p.register(CountSamples)
