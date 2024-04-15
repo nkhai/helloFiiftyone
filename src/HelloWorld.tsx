@@ -10,13 +10,8 @@ import {
   registerOperator,
   executeOperator,
 } from "@fiftyone/operators";
-import Divider from '@mui/material/Divider';
-import { Height } from "@mui/icons-material";
-import Paper from '@mui/material/Paper';
-
-
-import { styled } from '@mui/material/styles';
-import { alignProperty } from "@mui/material/styles/cssUtils";
+import { Grid, Typography, Link } from "@mui/material";
+import InputBar from "./InputBar";
 
 const DemoPaper = styled(Paper)(({ theme }) => ({
   width: 400,
@@ -51,6 +46,7 @@ export function HelloWorld() {
   //     <Button onClick={onClickAlert}>Show alert</Button>
   //   </>
   // );
+  const hasMessages = false;
   return (
     <Grid
       container
@@ -60,12 +56,6 @@ export function HelloWorld() {
       style={{margin: '400px 0px 0px 0px', height: '150px'}}
       justifyContent="center"
     >
-      {/* {!hasMessages && <Intro />} */}
-      {hasMessages && (
-        <Grid item lg={12}>
-          <Chat />
-        </Grid>
-      )}
       <Grid
         item
         container
@@ -78,7 +68,7 @@ export function HelloWorld() {
         <Divider  sx={{width:'100%', height:"1px"}} style={{ background: 'white' }} />
         <Grid item sm={6} md={6} lg={6}>
           <InputBar
-            hasMessages='false'
+            hasMessages={false}
             disabled={false}
             placeHoldermsg="Enter Attribute"
             needIcon="false"
@@ -95,10 +85,16 @@ export function HelloWorld() {
           </Typography> */}
         </Grid>
         <Divider  sx={{width:'100%', height:"1px"}} style={{ background: 'white' }} />
+        <h1>Hello, world!</h1>
+          <h2>
+            You are viewing the <strong>{dataset.name}</strong> dataset
+          </h2>
+          <Button onClick={() => executor.execute()}>Count samples</Button>
+          <Button onClick={onClickAlert}>Show alert</Button>
         <Grid item sm={4} md={4} lg={4}>
           <InputBar
-            hasMessages={hasMessages}
-            disabled={receiving || waiting}
+            hasMessages={false}
+            disabled={false}
             placeHoldermsg="Add new class here"
             needIcon="true"
             onMessageSend={()=>{}}
