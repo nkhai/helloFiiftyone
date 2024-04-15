@@ -2,8 +2,8 @@ import { registerComponent, PluginComponentType } from "@fiftyone/plugins";
 import { HelloWorld } from "./HelloWorld";
 
 registerComponent({
-  name: "HelloWorld",
-  label: "Hello world",
+  name: "HelloAtlas",
+  label: "Hello Atlas",
   component: HelloWorld,
   type: PluginComponentType.Panel,
   activator: myActivator,
