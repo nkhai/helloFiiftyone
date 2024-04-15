@@ -10,21 +10,21 @@ import {
   registerOperator,
   executeOperator,
 } from "@fiftyone/operators";
-import { Grid, Typography, Link } from "@mui/material";
-import InputBar from "./InputBar";
+// import { Grid, Typography, Link } from "@mui/material";
+// import InputBar from "./InputBar";
 
-const DemoPaper = styled(Paper)(({ theme }) => ({
-  width: 400,
-  height: 400,
-  padding: theme.spacing(2),
-  ...theme.typography.body2,
-  textAlign: 'center',
-  bgcolor: 'gray',
-  color: 'white',
-  backgroundColor:'gray',
-  ml: 0
+// const DemoPaper = styled(Paper)(({ theme }) => ({
+//   width: 400,
+//   height: 400,
+//   padding: theme.spacing(2),
+//   ...theme.typography.body2,
+//   textAlign: 'center',
+//   bgcolor: 'gray',
+//   color: 'white',
+//   backgroundColor:'gray',
+//   ml: 0
   
-}));
+// }));
 
 export function HelloWorld() {
   const executor =  ("@atlas/hello-world/count_samples");
@@ -36,97 +36,97 @@ export function HelloWorld() {
   if (executor.isLoading) return <h3>Loading...</h3>;
   if (executor.result) return <h3>Dataset size: {executor.result.count}</h3>;
 
-  // return (
-  //   <>
-  //     <h1>Hello, world!</h1>
-  //     <h2>
-  //       You are viewing the <strong>{dataset.name}</strong> dataset
-  //     </h2>
-  //     <Button onClick={() => executor.execute()}>Count samples</Button>
-  //     <Button onClick={onClickAlert}>Show alert</Button>
-  //   </>
-  // );
-  const hasMessages = false;
   return (
-    <Grid
-      container
-      direction="row"
-      spacing={2}
-      sx={{ height: "20%" , width: '60%'}}
-      style={{margin: '400px 0px 0px 0px', height: '150px'}}
-      justifyContent="center"
-    >
-      <Grid
-        item
-        container
-        sx={{ marginTop: hasMessages ? "auto" : undefined }}
-        justifyContent="left"
-      >
-        <Grid item sm={12} md={12} lg={12}>
-          Update Attriute or Class
-        </Grid>
-        <Divider  sx={{width:'100%', height:"1px"}} style={{ background: 'white' }} />
-        <Grid item sm={6} md={6} lg={6}>
-          <InputBar
-            hasMessages={false}
-            disabled={false}
-            placeHoldermsg="Enter Attribute"
-            needIcon="false"
-            onMessageSend={()=>{}}
-          />
-          {/* <Typography
-            variant="caption"
-            sx={{ marginTop: "8px", display: "block", textAlign: "center" }}
-          >
-            VoxelGPT is in beta and may not understand certain queries.{" "}
-            <Link href="https://github.com/voxel51/voxelgpt" target="_blank">
-              Learn more
-            </Link>
-          </Typography> */}
-        </Grid>
-        <Divider  sx={{width:'100%', height:"1px"}} style={{ background: 'white' }} />
-        <h1>Hello, world!</h1>
-          <h2>
-            You are viewing the <strong>{dataset.name}</strong> dataset
-          </h2>
-          <Button onClick={() => executor.execute()}>Count samples</Button>
-          <Button onClick={onClickAlert}>Show alert</Button>
-        <Grid item sm={4} md={4} lg={4}>
-          <InputBar
-            hasMessages={false}
-            disabled={false}
-            placeHoldermsg="Add new class here"
-            needIcon="true"
-            onMessageSend={()=>{}}
-          />
-          {/* <Typography
-            variant="caption"
-            sx={{ marginTop: "8px", display: "block", textAlign: "center" }}
-          >
-            VoxelGPT is in beta and may not understand certain queries.{" "}
-            <Link href="https://github.com/voxel51/voxelgpt" target="_blank">
-              Learn more
-            </Link>
-          </Typography> */}
-        </Grid>
-        <Grid item sm={8} md={8} lg={8}>
-          <DemoPaper elevation={3} variant="outlined" >
-            <div style={{textAlign:"left"}}>X class Deine:</div>
-            {/* {JSON.stringify(data)} */}
-          </DemoPaper>
-          {/* <Typography
-            variant="caption"
-            sx={{ marginTop: "8px", display: "block", textAlign: "center" }}
-          >
-            VoxelGPT is in beta and may not understand certain queries.{" "}
-            <Link href="https://github.com/voxel51/voxelgpt" target="_blank">
-              Learn more
-            </Link>
-          </Typography> */}
-        </Grid>
-      </Grid>
-    </Grid>
+    <>
+      <h1>Hello, world!</h1>
+      <h2>
+        You are viewing the <strong>{dataset.name}</strong> dataset
+      </h2>
+      <Button onClick={() => executor.execute()}>Count samples</Button>
+      <Button onClick={onClickAlert}>Show alert</Button>
+    </>
   );
+  // const hasMessages = false;
+  // return (
+  //   <Grid
+  //     container
+  //     direction="row"
+  //     spacing={2}
+  //     sx={{ height: "20%" , width: '60%'}}
+  //     style={{margin: '400px 0px 0px 0px', height: '150px'}}
+  //     justifyContent="center"
+  //   >
+  //     <Grid
+  //       item
+  //       container
+  //       sx={{ marginTop: hasMessages ? "auto" : undefined }}
+  //       justifyContent="left"
+  //     >
+  //       <Grid item sm={12} md={12} lg={12}>
+  //         Update Attriute or Class
+  //       </Grid>
+  //       <Divider  sx={{width:'100%', height:"1px"}} style={{ background: 'white' }} />
+  //       <Grid item sm={6} md={6} lg={6}>
+  //         <InputBar
+  //           hasMessages={false}
+  //           disabled={false}
+  //           placeHoldermsg="Enter Attribute"
+  //           needIcon="false"
+  //           onMessageSend={()=>{}}
+  //         />
+  //         {/* <Typography
+  //           variant="caption"
+  //           sx={{ marginTop: "8px", display: "block", textAlign: "center" }}
+  //         >
+  //           VoxelGPT is in beta and may not understand certain queries.{" "}
+  //           <Link href="https://github.com/voxel51/voxelgpt" target="_blank">
+  //             Learn more
+  //           </Link>
+  //         </Typography> */}
+  //       </Grid>
+  //       <Divider  sx={{width:'100%', height:"1px"}} style={{ background: 'white' }} />
+  //       <h1>Hello, world!</h1>
+  //         <h2>
+  //           You are viewing the <strong>{dataset.name}</strong> dataset
+  //         </h2>
+  //         <Button onClick={() => executor.execute()}>Count samples</Button>
+  //         <Button onClick={onClickAlert}>Show alert</Button>
+  //       <Grid item sm={4} md={4} lg={4}>
+  //         <InputBar
+  //           hasMessages={false}
+  //           disabled={false}
+  //           placeHoldermsg="Add new class here"
+  //           needIcon="true"
+  //           onMessageSend={()=>{}}
+  //         />
+  //         {/* <Typography
+  //           variant="caption"
+  //           sx={{ marginTop: "8px", display: "block", textAlign: "center" }}
+  //         >
+  //           VoxelGPT is in beta and may not understand certain queries.{" "}
+  //           <Link href="https://github.com/voxel51/voxelgpt" target="_blank">
+  //             Learn more
+  //           </Link>
+  //         </Typography> */}
+  //       </Grid>
+  //       <Grid item sm={8} md={8} lg={8}>
+  //         <DemoPaper elevation={3} variant="outlined" >
+  //           <div style={{textAlign:"left"}}>X class Deine:</div>
+  //           {/* {JSON.stringify(data)} */}
+  //         </DemoPaper>
+  //         {/* <Typography
+  //           variant="caption"
+  //           sx={{ marginTop: "8px", display: "block", textAlign: "center" }}
+  //         >
+  //           VoxelGPT is in beta and may not understand certain queries.{" "}
+  //           <Link href="https://github.com/voxel51/voxelgpt" target="_blank">
+  //             Learn more
+  //           </Link>
+  //         </Typography> */}
+  //       </Grid>
+  //     </Grid>
+  //   </Grid>
+  // );
 }
 
 class AlertOperator extends Operator {
