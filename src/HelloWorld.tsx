@@ -32,9 +32,9 @@ const DemoPaper = styled(Paper)(({ theme }) => ({
 }));
 
 export function HelloWorld() {
-  const executor =  ("@voxel51/hello-world/count_samples");
+  const executor =  ("@atlas/hello-world/count_samples");
   const onClickAlert = useCallback(() =>
-    executeOperator("@voxel51/hello-world/show_alert")
+    executeOperator("@atlas/hello-world/show_alert")
   );
   const dataset = useRecoilValue(fos.dataset);
 
@@ -146,4 +146,4 @@ class AlertOperator extends Operator {
   }
 }
 
-registerOperator(AlertOperator, "@voxel51/hello-world");
+registerOperator(AlertOperator, "@atlas/hello-world");

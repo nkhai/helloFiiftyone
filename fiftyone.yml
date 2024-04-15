@@ -1,4 +1,4 @@
-name: "@voxel51/hello-world"
+name: "@atlas/hello-world"
 description: An example of JS and Python components in a single plugin
 version: 1.0.0
 fiftyone:
