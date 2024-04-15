@@ -27,9 +27,9 @@ import {
 // }));
 
 export function HelloWorld() {
-  const executor =  ("@atlas/hello-world/count_samples");
+  const executor =  ("@atlas/hello-atlas/count_samples");
   const onClickAlert = useCallback(() =>
-    executeOperator("@atlas/hello-world/show_alert")
+    executeOperator("@atlas/hello-atlas/show_alert")
   );
   const dataset = useRecoilValue(fos.dataset);
 
@@ -142,4 +142,4 @@ class AlertOperator extends Operator {
   }
 }
 
-registerOperator(AlertOperator, "@atlas/hello-world");
+registerOperator(AlertOperator, "@atlas/hello-atlas");

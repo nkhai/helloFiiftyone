@@ -16,7 +16,7 @@ It demonstrates how to do the following:
 ```shell
 fiftyone plugins download \
     https://github.com/voxel51/fiftyone-plugins \
-    --plugin-names @atlas/hello-world
+    --plugin-names @atlas/hello-atlas
 ```
 
 Refer to the [main README](https://github.com/voxel51/fiftyone-plugins) for

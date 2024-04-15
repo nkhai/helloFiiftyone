@@ -1,5 +1,5 @@
 {
-    "name": "@atlas/hello-world",
+    "name": "@atlas/hello-atlas",
     "version": "1.0.0",
     "main": "src/HelloWorldPlugin.tsx",
     "license": "MIT",
